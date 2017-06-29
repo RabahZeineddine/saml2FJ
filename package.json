@@ -1,0 +1,27 @@
+{
+  "name": "saml2fj",
+  "version": "1.0.0",
+  "description": "Parse SAML authentication response to filtered/custom JSON.",
+  "main": "saml2FJ.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RabahZeineddine/saml2FJ.git"
+  },
+  "keywords": [
+    "SAML2JSON",
+    "SAML",
+    "w3id"
+  ],
+  "author": "Rabah Zeineddine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RabahZeineddine/saml2FJ/issues"
+  },
+  "homepage": "https://github.com/RabahZeineddine/saml2FJ#readme",
+  "dependencies": {
+    "xml2json": "^0.11.0"
+  }
+}

@@ -1,0 +1,1 @@
+# SAML authentication response to filtered JSON.
