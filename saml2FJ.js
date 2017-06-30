@@ -21,7 +21,7 @@ var parser = {
                         filteredJSON["firstName"] = element['saml:AttributeValue']['$t'];
                         break;
                     case "lastname":
-                        filteredJSON["firstName"] = element['saml:AttributeValue']['$t'];
+                        filteredJSON["lastName"] = element['saml:AttributeValue']['$t'];
                         break;
                     case "uid":
                         filteredJSON["uid"] = element['saml:AttributeValue']['$t'];
