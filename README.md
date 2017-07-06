@@ -46,15 +46,16 @@ Import saml2fj to your js code.
         "uid": "<uid>",
         "email": "<Email>",
         "fullName": "<Full name>",
-        "blueGroups": [
+        "Groups": [
             {
-                "name": "<BlueGroup Name>"
+                "name": "<Group Name>"
             }
         ]
 
 
     }
  ```
+    Confirm that the JSON's keys are equals to your user register structure
 
     Error: 
 
