@@ -1,43 +1,42 @@
-# SAML authentication response to filtered JSON.
+# saml2FJ.js
 
-#What is it?
+## SAML authentication response to filtered JSON.
+
+
+## What is it?
 
     saml2fj is a simple javascript file that converts SAML xml's response 
     
     to JSON using xml2json package and it offers customizable methods for 
     
-    the repsonse.
+    its repsonse.
 
-#How to use saml2fj
+## How to use saml2fj
 
 Import saml2fj to your js code.
+    `var saml2FJ = require('saml2fj')`
+
+
+    In the /assert path or whatever you configure your w3id application
+    
+    target, get the SAMLResponse or SAMLRequest and send it to the saml2fj
+    
+    parser.
+
+    `var response = req.body.SAMLResponse || req.body.SAMLRequest`
+
+### For customizable/filtred JSON : 
 
 ```
-    var saml2FJ = require('saml2fj');
-
-```
-
-    In the /assert path or whatever you configure your w3id application target, 
-
-    get the SAMLResponse or SAMLRequest and send it to the saml2fj parser.
-
-```
-    var response = req.body.SAMLResponse || req.body.SAMLRequest;
-
-```
-
-#For customizable/filtred JSON : 
-
-```
-    saml2FJ.toFiltredJSON(repsonse,function(data)){
+    saml2FJ.toFiltredJSON(repsonse,function(data){
         // Data might be an error if there is, or SAML as JSON.
-    }
+    });
 
 ```
 
- Response:
+#### Response:
 
-    Success:
+##### Success:
 
  ```
     {
@@ -51,13 +50,12 @@ Import saml2fj to your js code.
                 "name": "<Group Name>"
             }
         ]
-
-
     }
  ```
-    Confirm that the JSON's keys are equals to your user register structure
 
-    Error: 
+> Confirm that the JSON's keys are equals to your user register structure
+
+#### Error: 
 
 ```
     {
@@ -67,7 +65,7 @@ Import saml2fj to your js code.
 
 ```
 
-#For original SAML response JSON ( Full one ) :
+## For original SAML response JSON ( Full one ) :
 
 
 ```    
@@ -76,4 +74,6 @@ Import saml2fj to your js code.
     });
 
 ```
+
+> You can check the response keys and manipulate it as you want.
 
