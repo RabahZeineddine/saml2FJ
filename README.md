@@ -5,11 +5,11 @@
 
 ## What is it?
 
-    saml2fj is a simple javascript file that converts SAML xml's response 
-    
-    to JSON using xml2json package and it offers customizable methods for 
-    
-    its repsonse.
+saml2fj is a simple javascript file that converts SAML xml's
+
+response to JSON using xml2json package and it offers customizable
+
+methods for its repsonse.
 
 ## How to use saml2fj
 
@@ -17,13 +17,13 @@ Import saml2fj to your js code.
     `var saml2FJ = require('saml2fj')`
 
 
-    In the /assert path or whatever you configure your w3id application
-    
-    target, get the SAMLResponse or SAMLRequest and send it to the saml2fj
-    
-    parser.
+In the /assert path or whatever you configure your w3id
 
-    `var response = req.body.SAMLResponse || req.body.SAMLRequest`
+application target, get the SAMLResponse or SAMLRequest 
+
+and send it to the saml2fj parser.
+
+`var response = req.body.SAMLResponse || req.body.SAMLRequest`
 
 ### For customizable/filtred JSON : 
 
@@ -34,7 +34,7 @@ Import saml2fj to your js code.
 
 ```
 
-#### Response:
+### Response:
 
 ##### Success:
 
