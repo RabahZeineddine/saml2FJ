@@ -28,8 +28,8 @@ var parser = {
                         filteredJSON["fullName"] = element['saml:AttributeValue']['$t'];
                         break;
                     case "bluegroups":
-                        filteredJSON["blueGroups"] = element['saml:AttributeValue'].map(function (group) {
-                            return { name: group['$t'].split(',')[0].split('=')[1] }
+                        filteredJSON["blueGroups"] = JSON.parse(element['saml:AttributeValue']["$t"]).map(function (group) {
+                            return { name: group.split(',')[0].split('=')[1] }
                         });
                         break;
                 }

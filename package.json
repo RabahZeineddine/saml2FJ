@@ -1,6 +1,6 @@
 {
   "name": "saml2fj",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "description": "Parse SAML authentication response to filtered/custom JSON.",
   "main": "saml2FJ.js",
   "scripts": {
