@@ -11,26 +11,26 @@ var parser = {
             var response = new Buffer(SAMLResponse, 'base64');
             var json = JSON.parse(xml2json.toJson(response.toString()));
             var filteredJSON = {};
-            var samlAttributes = result['samlp:Response']['saml:Assertion'][0]['saml:AttributeStatement'][0]['saml:Attribute'];
+            var samlAttributes = json['samlp:Response']['saml:Assertion']['saml:AttributeStatement']['saml:Attribute'];
             samlAttributes.forEach(function (element) {
-                switch (element['$']['Name'].toLowerCase()) {
+                switch (element['Name'].toLowerCase()) {
                     case "firstname":
-                        filteredJSON["firstName"] = element['saml:AttributeValue'][0]['_'];
+                        filteredJSON["firstName"] = element['saml:AttributeValue']['$t'];
                         break;
                     case "lastname":
-                        filteredJSON["lastName"] = element['saml:AttributeValue'][0]['_'];
+                        filteredJSON["lastName"] = element['saml:AttributeValue']['$t'];
                         break;
                     case "uid":
-                        filteredJSON["uid"] = element['saml:AttributeValue'][0]['_'];
+                        filteredJSON["uid"] = element['saml:AttributeValue']['$t'];
                         break;
                     case "emailaddress":
-                        filteredJSON["email"] = element['saml:AttributeValue'][0]['_'];
+                        filteredJSON["email"] = element['saml:AttributeValue']['$t'];
                         break;
                     case "cn":
-                        filteredJSON["fullName"] = element['saml:AttributeValue'][0]['_'];
+                        filteredJSON["fullName"] = element['saml:AttributeValue']['$t'];
                         break;
                     case "bluegroups":
-                        filteredJSON["blueGroups"] = JSON.parse(element['saml:AttributeValue'][0]["_"]).map(function (group) {
+                        filteredJSON["blueGroups"] = JSON.parse(element['saml:AttributeValue']["$t"]).map(function (group) {
                             return {
                                 name: group.split(',')[0].split('=')[1]
                             }
