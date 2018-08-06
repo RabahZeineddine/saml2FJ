@@ -72,7 +72,7 @@ var parser = {
                         break;
                     case "bluegroups":
                         filteredJSON["blueGroups"] = element["saml:AttributeValue"].map((key) => {
-                            return { name: key["_"].split(",")[0].split("=")[1]}
+                            return { name: key['$t'].split(",")[0].split("=")[1]}
                         });
                         break;
                 }
