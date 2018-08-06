@@ -28,12 +28,19 @@ and send it to the saml2fj parser.
 ### For customizable/filtred JSON : 
 
 ```
-    saml2FJ.toFiltredJSON(repsonse,function(data){
+    saml2FJ.toFiltredJSON(response,function(data){
         // Data might be an error if there is, or SAML as JSON.
     });
 
 ```
+### For customizable/filtred JSON when using the new SAML response : 
 
+```
+    saml2FJ.newToFiltredJSON(response,function(data){
+        // Data might be an error if there is, or SAML as JSON.
+    });
+
+```
 ### Response:
 
 ##### Success:
