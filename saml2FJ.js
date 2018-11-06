@@ -1,7 +1,6 @@
 var xml2json = require('xml2json');
 var parser = {
     toFiltredJSON: function (SAMLResponse, callback) {
-
         if (SAMLResponse == null || SAMLResponse == {} || SAMLResponse == '') {
             callback({
                 error: true,
@@ -30,9 +29,9 @@ var parser = {
                         filteredJSON["fullName"] = element['saml:AttributeValue']['$t'];
                         break;
                     case "bluegroups":
-                        filteredJSON["blueGroups"] = JSON.parse(element['saml:AttributeValue']["$t"]).map(function (group) {
+                        filteredJSON["bluegroups"] = element['saml:AttributeValue'].map(function (group) {
                             return {
-                                name: group.split(',')[0].split('=')[1]
+                                name: group['$t'].split(',')[0].split('=')[1]
                             }
                         });
                         break;
@@ -42,7 +41,7 @@ var parser = {
             callback(filteredJSON);
         }
     },
-    newToFiltredJSON: function(SAMLResponse, callback) {
+    newToFiltredJSON: function (SAMLResponse, callback) {
         if (SAMLResponse == null || SAMLResponse == {} || SAMLResponse == '') {
             callback({
                 error: true,
@@ -72,7 +71,7 @@ var parser = {
                         break;
                     case "bluegroups":
                         filteredJSON["blueGroups"] = element["saml:AttributeValue"].map((key) => {
-                            return { name: key['$t'].split(",")[0].split("=")[1]}
+                            return { name: key['$t'].split(",")[0].split("=")[1] }
                         });
                         break;
                 }
